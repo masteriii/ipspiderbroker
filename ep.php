@@ -68,7 +68,7 @@ class MTSSpiderBroker{
 		$content='';//json string
 		
 		
-		$url='https://csd.go.th/dev/ws/ipspiderdb/ep.php';
+		$url='https://csddev.csd.go.th/ws/ipspiderdb/ep.php';
 		$token = MTSSpiderBroker::get_param('token');
 		$post = array('ip'=>$ip,'action'=>'get_ip_info','token'=>$token);
 		$ch = curl_init();
@@ -150,7 +150,7 @@ class MTSSpiderBroker{
 			$spider_name=$params['spider_detail']['name'];
 			
 			
-			$url='https://csd.go.th/dev/ws/ipspiderdb/ep.php';
+			$url='https://csddev.csd.go.th/ws/ipspiderdb/ep.php';
 			$token = MTSSpiderBroker::get_param('token');
 			$post = array(
 			
@@ -289,6 +289,7 @@ class MTSSpiderBroker{
 				'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0'
 				
 			);
+			$ip = self::get_param('ip');
 			$idx=rand(0,count($arr_user_agent)-1);
 			$user_agent = $arr_user_agent[$idx];
 			$token = MTSSpiderBroker::get_param('token');
