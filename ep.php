@@ -245,7 +245,7 @@ class MTSSpiderBroker{
 			$user_agent = $arr_user_agent[$idx];
 			$token = MTSSpiderBroker::get_param('token');
 			$post = array('ip'=>$ip,'action'=>'get_ip_info','token'=>$token);
-			$url = 'https://ipspiderws6.herokuapp.com/ep.php';
+			
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $url);
 			curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($post));
