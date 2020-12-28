@@ -12,5 +12,6 @@ $arr_webservice = array(
 ,'ipspiderws3'=>array('ep'=>'https://ipspiderws3.herokuapp.com/ep.php')
 ,'ipspiderws4'=>array('ep'=>'https://ipspiderws4.herokuapp.com/ep.php')
 ,'ipspiderws5'=>array('ep'=>'https://ipspiderws5.herokuapp.com/ep.php')
+,'ipspiderws6'=>array('ep'=>'https://ipspiderws6.herokuapp.com/ep.php')
 );
 ?>
