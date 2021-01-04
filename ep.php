@@ -89,8 +89,7 @@ class MTSSpiderBroker{
 	}//fn
 	
 	private function _update_ip_info($params){
-		
-		
+	
 		$arr_user_agent=array(
 
 		// 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246'
@@ -138,15 +137,15 @@ class MTSSpiderBroker{
 			// 24: ip : 49.229.36.170
 			// 25: title : รายละเอียดของ ip 49.229.36.170
 			$result=$params['result'];
+			$ip=$result['ip'];
+			$isp=$result['isp'];
+			$organization=$result['organization'];
+			$country=$result['country'];
+			$region=$result['region'];
+			$city=$result['city'];
+			$lat=$result['lat'];
+			$lng=$result['lng'];
 			
-			$ip=$result[24]['value'];
-			$isp=$result[6]['value'];
-			$organization=$result[6]['value'];
-			$country=$result[2]['value'];
-			$region=$result[3]['value'];
-			$city=$result[4]['value'];
-			$lat='0';
-			$lng='0';
 			$spider_name=$params['spider_detail']['name'];
 			
 			
@@ -209,10 +208,17 @@ class MTSSpiderBroker{
 				break;
 			}
 			
-			//do process when not found
+			//do process when not found fetch from webservice
 			if($webservice_num<=0){
 				
 				$errs[]=('ไม่มี webservice เลยสักตัว');
+				break;
+				
+			}
+			
+			if($ip==''){
+				
+				$errs[]=('IP can not blank (ipspiderbroker)');
 				break;
 				
 			}
